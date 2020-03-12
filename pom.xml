@@ -173,6 +173,7 @@
 
     <!-- 普通的maven打包方式 -->
     <build>
+    <finalName>blog_thymeleaf</finalName>
             <plugins>
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
