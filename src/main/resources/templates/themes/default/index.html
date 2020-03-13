@@ -6,6 +6,16 @@
     <div class="post-lists">
         <div class="post-lists-body">
             <div class="post-list-item" th:each="article: ${articles.list}">
+            	<div class="post-list-item-extra-info-container">
+            		<div class="post-list-item-extra-info-wrapper">
+            			<img class="post-list-item-extra-info-icon" th:src="@{/user/img/icon-eye.png}"/>
+            			<span class="post-list-item-extra-info-count" th:text="${article.hits}"></span>
+            		</div>
+            		<div class="post-list-item-extra-info-wrapper">
+            			<img class="post-list-item-extra-info-icon" th:src="@{/user/img/icon-comment.png}"/>
+            			<span class="post-list-item-extra-info-count" th:text="${article.commentsNum}"></span>
+            		</div>
+            	</div>
                 <div class="post-list-item-container">
                     <a th:href="${commons.permalink(article)}" class="item-thumb  bg-deepgrey"
                        th:style="'background-image:url('+@{${commons.show_thumb(article)}}+');'">
@@ -19,7 +29,7 @@
                         </div>
                         <div class="item-meta clearfix">
                             <div th:class="'item-meta-ico '+ ${commons.show_icon(article.cid)}"
-                                 th:style="'background: url('+@{/user/img/bg-ico.png}+');no-repeat;background-size: 40px auto;' "></div>
+                                 th:style="'background: url('+@{/user/img/bg-ico.png}+') no-repeat;background-size: 40px auto;' "></div>
                             <div class="item-meta-cat" th:utext="${commons.show_categories(article.categories)}">
                             </div>
                         </div>
