@@ -1,16 +1,18 @@
 package com.my.blog.website.service.impl;
 
-import com.my.blog.website.dao.OptionVoMapper;
-import com.my.blog.website.modal.Vo.OptionVo;
-import com.my.blog.website.modal.Vo.OptionVoExample;
-import com.my.blog.website.service.IOptionService;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-import java.util.List;
-import java.util.Map;
+import com.my.blog.website.dao.OptionVoMapper;
+import com.my.blog.website.modal.Vo.OptionVo;
+import com.my.blog.website.modal.Vo.OptionVoExample;
+import com.my.blog.website.service.IOptionService;
 
 /**
  * options表的service
@@ -56,4 +58,11 @@ public class OptionServiceImpl implements IOptionService {
     public List<OptionVo> getOptions(){
         return optionDao.selectByExample(new OptionVoExample());
     }
+
+	@Override
+	public List<OptionVo> getOptions(String name) {
+		OptionVoExample example = new OptionVoExample();
+		example.createCriteria().andNameLike("%" + name + "%");
+		return optionDao.selectByExample(example);
+	}
 }

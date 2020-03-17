@@ -16,6 +16,8 @@ public interface IOptionService {
     void insertOption(String name, String value);
 
     List<OptionVo> getOptions();
+    
+    List<OptionVo> getOptions(String name);
 
 
     /**

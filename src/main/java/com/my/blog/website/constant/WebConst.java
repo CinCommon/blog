@@ -19,6 +19,7 @@ public class WebConst {
 
     public static Map<String, String> initConfig = new HashMap<>();
 
+    public static String SOCIAL_PREFIX = "social_";
 
     public static String LOGIN_SESSION_KEY = "login_user";
 
