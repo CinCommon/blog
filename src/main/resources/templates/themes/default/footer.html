@@ -9,7 +9,7 @@
                     <th:block th:if="${index.value}!=null and ${index.value}!=''">
                         <th:block th:switch="${index.key}">
                            <a th:class="'social ' + ${index.key}" target="blank"
-                              th:href="@{${index.value}}"><i style="font-size: 200%;" th:class="'fab fa-' + ${index.key}"></i></a>
+                              th:href="@{${index.value}}"><i th:class="'fab fa-' + ${index.key}"></i></a>
                         </th:block>
                     </th:block>
                 </th:block>
@@ -29,7 +29,6 @@
                                          rel="nofollow">My Blog</a> 保留一切权利
                         </p>
                         <br/>
-                        <p>赣ICP备16004176号</p>
                     </div>
                 </div>
             </div>
